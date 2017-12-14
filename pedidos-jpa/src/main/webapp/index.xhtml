@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<h:form>
+	<h:inputText value="#{ordenesBean.id}" />
+	<h:commandButton action="#{ordenesBean.doRead}" value="Leer" />
+	<h:commandButton action="#{ordenesBean.doList}" value="Listado 1" />
+	<h:commandButton action="#{ordenesBean.doList2}" value="Listado 2" />
+	<h:commandButton action="#{ordenesBean.doList3}" value="Listado 3" />
+	<h:commandButton action="#{ordenesBean.save}" value="Guardar" />
+	<h:commandButton action="#{ordenesBean.save2}" value="Guardar" />
+</h:form>
+
+</body> 
+</html>
