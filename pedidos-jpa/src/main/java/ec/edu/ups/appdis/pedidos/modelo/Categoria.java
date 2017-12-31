@@ -2,6 +2,10 @@ package ec.edu.ups.appdis.pedidos.modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.List;
 
 
@@ -63,7 +67,6 @@ public class Categoria implements Serializable {
 	public Producto removeProducto(Producto producto) {
 		getProductos().remove(producto);
 		producto.setCategoria(null);
-
 		return producto;
 	}
 

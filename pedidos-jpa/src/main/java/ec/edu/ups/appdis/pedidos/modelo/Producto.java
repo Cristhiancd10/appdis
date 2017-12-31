@@ -2,6 +2,11 @@ package ec.edu.ups.appdis.pedidos.modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -34,14 +39,16 @@ public class Producto implements Serializable {
 	private List<DetalleOrdene> detalleOrdenes;
 
 	//bi-directional many-to-one association to Categoria
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="categoriaid", nullable=false)
+	@JsonIgnore
 	private Categoria categoria;
 
 	//bi-directional many-to-one association to Proveedore
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="proveedorid", nullable=false)
-	private Proveedore proveedore;
+	@JsonIgnore
+	private Proveedore proveedore; 
 
 	public Producto() {
 	}
