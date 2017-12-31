@@ -12,7 +12,7 @@ public class Main {
 		CategoriasCli cli = new CategoriasCli();
 		
 		//Cosumiendo WS-REST de tipo GET que retorna un objeto 
-		Categoria cat = cli.getCategoria(1000);
+		Categoria cat = cli.getCategoria(100);
 		System.out.println(cat);
 		
 		//Cosumiendo WS-REST de tipo GET que retorna una colección de objeto 
